@@ -24,3 +24,37 @@ This tutorial outlines the implementation of on-premises Active Directory within
 - Step 2
 - Step 3
 - Step 4
+  
+<h2>Deployment and Configuration Steps</h2>  
+
+## Step 1: Setup Domain Controller in Azure  
+![image](https://github.com/user-attachments/assets/placeholder-image)
+
+- Created a Windows Server 2022 Virtual Machine in Azure for the Domain Controller, with the following specifications:
+  - Name: **DC-1**
+  - Username: **labuser**
+  - Password: **Cyberlab123!**
+  - Static Private IP: **Configured**
+  - Disabled Windows Firewall (for testing connectivity)
+
+---
+
+## Step 2: Setup Client-1 in Azure  
+![image](https://github.com/user-attachments/assets/placeholder-image)
+
+- Created a Windows 10 Virtual Machine in Azure for Client-1, with the following specifications:
+  - Name: **Client-1**
+  - Username: **labuser**
+  - Password: **Cyberlab123!**
+  - Attached Client-1 to the same region and Virtual Network as **DC-1**
+  - Set Client-1’s DNS settings to DC-1’s Private IP address
+
+---
+
+## Step 3: Test Connectivity Between DC-1 and Client-1  
+![image](https://github.com/user-attachments/assets/placeholder-image)
+
+- Restarted **Client-1** from the Azure portal.
+- Logged into **Client-1**.
+- Pinned **DC-1**’s private IP address from **Client-1** to ensure connectivity.
+- Verified DNS settings in **Client-1** using PowerShell with <code>ipconfig /all</code>, confirming that DNS points to **DC-1**'s Private IP address.
