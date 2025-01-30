@@ -34,6 +34,18 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - **Username**: `labuser`
    - **Password**: `Cyberlab123!`
    - **Network**: Attach to the same Virtual Network as Client-1, and configure the private IP as **static**.
+       - Go to the Azure Portal: https://portal.azure.com.
+       - In the left sidebar, click on Virtual Machines.
+       - Select the DC-1 VM.
+       - Under Settings, click on Networking.
+       - Find the Network Interface name (it usually starts with "dc-1-nic").
+       - Click on the Network Interface name to open its settings.
+       - Under Settings, click on IP Configurations.
+  - In the same IP Configurations section:
+       - Click on the existing IPv4 address (it should say something like "Dynamic").
+  - In the new window:
+       - Change the Assignment from Dynamic to Static.
+       - Click Save to apply the changes.
    - **Firewall**: Temporarily disable for testing connectivity (you can enable it later).
 
 2. **Network Configuration**:
