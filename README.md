@@ -41,9 +41,9 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
        - Find the Network Interface name (it usually starts with "dc-1-nic").
        - Click on the Network Interface name to open its settings.
        - Under Settings, click on IP Configurations.
-  - In the same IP Configurations section:
+       - In the same IP Configurations section:
        - Click on the existing IPv4 address (it should say something like "Dynamic").
-  - In the new window:
+       - In the new window:
        - Change the Assignment from Dynamic to Static.
        - Click Save to apply the changes.
    - **Firewall**: Temporarily disable for testing connectivity (you can enable it later).
