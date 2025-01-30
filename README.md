@@ -35,6 +35,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - **Username**: `labuser`
    - **Password**: `Cyberlab123!`
    - **Network**: Attach to the same Virtual Network as Client-1, and configure the private IP as **static**.
+     ![image](https://github.com/user-attachments/assets/e0231d9d-50cb-4bb1-b1cd-a3176c4428ed)
        - Go to the Azure Portal: https://portal.azure.com.
        - In the left sidebar, click on Virtual Machines.
        - Select the DC-1 VM.
