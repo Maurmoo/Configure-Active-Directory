@@ -31,88 +31,108 @@
 
 <h2>Deployment and Configuration Steps</h2>
 
-<h3>Step 1: Set Up the Domain Controller in Azure</h3>
-<p>
-    <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="DC Setup"/>
-</p>
-<ul>
-    <li><b>Virtual Machine:</b> Windows Server 2022 for the Domain Controller (DC-1)</li>
-    <li><b>Name:</b> DC-1</li>
-    <li><b>Username:</b> labuser</li>
-    <li><b>Password:</b> Cyberlab123!</li>
-    <li><b>Static Private IP:</b> Configured</li>
-    <li><b>Firewall:</b> Disabled (for testing connectivity)</li>
-</ul>
-
-<h3>Step 2: Set Up Client-1 in Azure</h3>
-<p>
-    <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Client Setup"/>
-</p>
-<ul>
-    <li><b>Virtual Machine:</b> Windows 10 (Client-1)</li>
-    <li><b>Name:</b> Client-1</li>
-    <li><b>Username:</b> labuser</li>
-    <li><b>Password:</b> Cyberlab123!</li>
-    <li><b>DNS Settings:</b> Set to DC-1's private IP address</li>
-    <li><b>Network:</b> Attached to the same region and Virtual Network as DC-1</li>
-</ul>
-
-<h3>Step 3: Test Connectivity Between DC-1 and Client-1</h3>
-<p>
-    <img src="https://i.imgur.com/DJmEXEB.png" height="80%" width="80%" alt="Connectivity Test"/>
-</p>
-<ul>
-    <li>Restart Client-1 from the Azure portal and log in.</li>
-    <li>Use PowerShell on Client-1 to run <code>ipconfig /all</code> and check if the DNS points to DC-1's private IP address.</li>
-    <li>Ping DC-1's private IP address to verify connectivity.</li>
-</ul>
-
-<h2>Azure Active Directory Lab Setup</h2>
-
-<h3>Install Active Directory on DC-1</h3>
-<ul>
-    <li>Power on DC-1 and Client-1 VMs in Azure.</li>
-    <li>Install Active Directory Domain Services (AD DS) on DC-1.</li>
-    <li>Promote DC-1 as a Domain Controller and set up a new forest (e.g., mydomain.com).</li>
-</ul>
-
-<h3>Create a Domain Admin User</h3>
-<ul>
-    <li>Open Active Directory Users and Computers (ADUC).</li>
-    <li>Create Organizational Units (OUs): _EMPLOYEES and _ADMINS.</li>
-    <li>Create a new domain admin user: <b>Jane Doe</b> (username: <code>jane_admin</code>).</li>
-    <li>Add <code>jane_admin</code> to the Domain Admins Security Group.</li>
-</ul>
-
-<h3>Join Client-1 to Your Domain</h3>
-<ul>
-    <li>Set Client-1's DNS settings to DC-1's private IP address.</li>
-    <li>Restart Client-1 and log in as local admin.</li>
-    <li>Join Client-1 to the domain <code>mydomain.com</code> and restart.</li>
-</ul>
-
-<h3>Set Up Remote Desktop for Non-Admin Users</h3>
-<ul>
-    <li>Log into Client-1 as <code>mydomain.com\jane_admin</code>.</li>
-    <li>Enable Remote Desktop access for domain users.</li>
-</ul>
-
-<h3>Create Additional Domain Users</h3>
-<ul>
-    <li>Log into DC-1 as <code>jane_admin</code>.</li>
-    <li>Use PowerShell to create additional users under the _EMPLOYEES OU.</li>
-    <li>Verify that users appear in ADUC.</li>
-</ul>
-
-<h2>Conclusion</h2>
-<p>
-    ✅ Installed and configured Active Directory on DC-1.<br/>
-    ✅ Created domain users and OUs.<br/>
-    ✅ Joined Client-1 to the domain.<br/>
-    ✅ Set up Remote Desktop for domain users.<br/>
-</p>
-
 <p align="center">
-    <img src="https://img.shields.io/badge/Azure-Cloud-blue"/>
+    <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
+
+# On-premises Active Directory Deployed in the Cloud (Azure)
+
+This tutorial guides you through deploying an on-premises Active Directory on Azure Virtual Machines, configuring a Domain Controller (DC), and setting up remote desktop access for domain users.
+
+## Environments and Technologies Used
+- **Microsoft Azure** (Virtual Machines/Compute)
+- **Remote Desktop Protocol** (RDP)
+- **Active Directory Domain Services** (AD DS)
+- **PowerShell**
+
+## Operating Systems Used
+- **Windows Server 2022** (for the Domain Controller)
+- **Windows 10** (21H2) (for Client-1)
+
+## High-Level Deployment and Configuration Steps
+1. Set up the Domain Controller (DC-1) in Azure
+2. Set up Client-1 in Azure
+3. Test connectivity between DC-1 and Client-1
+4. Install Active Directory Domain Services (AD DS) on DC-1
+5. Configure Remote Desktop access for domain users
+6. Create and manage domain users
+
+## Detailed Deployment and Configuration Steps
+
+### Step 1: Set Up the Domain Controller (DC-1) in Azure
+
+1. **Create the DC-1 VM**:
+   - Launch a new Virtual Machine (VM) with **Windows Server 2022**.
+   - **VM Name**: `DC-1`
+   - **Username**: `labuser`
+   - **Password**: `Cyberlab123!`
+   - **Network**: Attach to the same Virtual Network as Client-1, and configure the private IP as **static**.
+   - **Firewall**: Temporarily disable for testing connectivity (you can enable it later).
+
+2. **Network Configuration**:
+   - Ensure the DC-1 is within the same **Region** and **Virtual Network** as Client-1 for seamless communication.
+
+### Step 2: Set Up Client-1 in Azure
+
+1. **Create the Client-1 VM**:
+   - Launch a new VM with **Windows 10 (21H2)**.
+   - **VM Name**: `Client-1`
+   - **Username**: `labuser`
+   - **Password**: `Cyberlab123!`
+   - **Network Configuration**: Ensure Client-1 is in the same **Region** and **Virtual Network** as DC-1.
+
+2. **DNS Configuration**:
+   - After the VM is created, go to the **Networking** section for Client-1.
+   - Set the **DNS Servers** to DC-1's **Private IP address**.
+
+3. **Restart Client-1**:
+   - Restart Client-1 from the Azure Portal to apply the DNS settings.
+
+### Step 3: Test Connectivity Between DC-1 and Client-1
+
+1. **Ping Test**:
+   - After logging into **Client-1**, open **Command Prompt** or **PowerShell** and run:
+     ```bash
+     ping <DC-1 Private IP>
+     ```
+   - Ensure the ping is successful, confirming connectivity.
+
+2. **Check DNS Settings**:
+   - On **Client-1**, open **PowerShell** and run:
+     ```bash
+     ipconfig /all
+     ```
+   - Verify that the DNS server points to **DC-1’s private IP address**.
+
+### Step 4: Install Active Directory Domain Services (AD DS) on DC-1
+
+1. **Install AD DS**:
+   - On **DC-1**, open **Server Manager** → **Add Roles and Features**.
+   - Select **Active Directory Domain Services** (AD DS) and complete the installation.
+
+2. **Promote DC-1 to Domain Controller**:
+   - After AD DS installation, click the notification to promote DC-1 as a Domain Controller.
+   - Create a new forest, for example: `mydomain.com`.
+   - Set the **Domain Functional Level** to **Windows Server 2022**.
+   - **Set Directory Services Restore Mode (DSRM) password** (e.g., `Cyberlab123!`).
+
+### Step 5: Configure Remote Desktop Access for Domain Users
+
+1. **Enable Remote Desktop on Client-1**:
+   - Log into **Client-1** as **labuser**.
+   - Open **System Properties** → **Remote Settings** → Select **Allow remote connections**.
+
+2. **Remote Desktop for Domain Users**:
+   - Log into **Client-1** as **mydomain.com\jane_admin**.
+   - Ensure that domain users have permission to connect via RDP by adding them to the **Remote Desktop Users** group.
+
+### Step 6: Create and Manage Domain Users
+
+1. **Create Organizational Units (OUs)**:
+   - On **DC-1**, open **Active Directory Users and Computers (ADUC)**.
+   - Create two OUs: `_EMPLOYEES` and `_ADMINS`.
+
+2. **Create Domain Admin User**:
+   - Inside **ADUC**, create
+
 
