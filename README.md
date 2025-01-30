@@ -26,7 +26,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 
 ## Detailed Deployment and Configuration Steps
 
-### Step 1: Set Up the Domain Controller (DC-1) in Azure
+## Step 1: Set Up the Domain Controller (DC-1) in Azure
 ![image](https://github.com/user-attachments/assets/aca6615e-2455-4882-a680-53ba63e80d45)
 
 1. **Create the DC-1 VM**:
@@ -59,10 +59,9 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
        - `Get-NetFirewallProfile`
    - The Enabled status should now be False.
 
-2. **Network Configuration**:
-   - Ensure the DC-1 is within the same **Region** and **Virtual Network** as Client-1 for seamless communication.
 
-### Step 2: Set Up Client-1 in Azure
+
+## Step 2: Set Up Client-1 in Azure
 
 1. **Create the Client-1 VM**:
    - Launch a new VM with **Windows 10 (21H2)**.
@@ -78,7 +77,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 3. **Restart Client-1**:
    - Restart Client-1 from the Azure Portal to apply the DNS settings.
 
-### Step 3: Test Connectivity Between DC-1 and Client-1
+## Step 3: Test Connectivity Between DC-1 and Client-1
 
 1. **Ping Test**:
    - After logging into **Client-1**, open **Command Prompt** or **PowerShell** and run:
@@ -90,7 +89,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - ipconfig /all
    - Verify that the DNS server points to **DC-1’s private IP address**.
 
-### Step 4: Install Active Directory Domain Services (AD DS) on DC-1
+## Step 4: Install Active Directory Domain Services (AD DS) on DC-1
 
 1. **Install AD DS**:
    - On **DC-1**, open **Server Manager** → **Add Roles and Features**.
@@ -102,7 +101,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Set the **Domain Functional Level** to **Windows Server 2022**.
    - **Set Directory Services Restore Mode (DSRM) password** (e.g., `Cyberlab123!`).
 
-### Step 5: Configure Remote Desktop Access for Domain Users
+## Step 5: Configure Remote Desktop Access for Domain Users
 
 1. **Enable Remote Desktop on Client-1**:
    - Log into **Client-1** as **labuser**.
@@ -112,7 +111,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Log into **Client-1** as **mydomain.com\jane_admin**.
    - Ensure that domain users have permission to connect via RDP by adding them to the **Remote Desktop Users** group.
 
-### Step 6: Create and Manage Domain Users
+## Step 6: Create and Manage Domain Users
 
 1. **Create Organizational Units (OUs)**:
    - On **DC-1**, open **Active Directory Users and Computers (ADUC)**.
