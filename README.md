@@ -22,8 +22,8 @@
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 <ul>
-    <li>Set up the Domain Controller in Azure</li>
-    <li>Set up Client-1 in Azure</li>
+**Step 1:** Set up the Domain Controller in Azure</li>
+**Step 1:** Set up Client-1 in Azure</li>
     <li>Test Connectivity Between DC-1 and Client-1</li>
     <li>Install Active Directory Domain Services (AD DS)</li>
     <li>Configure Remote Desktop Access for Domain Users</li>
