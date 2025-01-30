@@ -5,8 +5,6 @@
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
 <p>This tutorial walks you through deploying on-premises Active Directory on Azure Virtual Machines, configuring a Domain Controller, and setting up remote desktop access for domain users.</p>
 
-<h2>Video Demonstration</h2>
-<p>- <a href="https://www.youtube.com">YouTube: How to Deploy on-premises Active Directory within Azure Compute</a></p>
 
 <h2>Environments and Technologies Used</h2>
 <ul>
