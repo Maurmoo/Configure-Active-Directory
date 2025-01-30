@@ -5,6 +5,8 @@
 <h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
 <p>This tutorial walks you through deploying on-premises Active Directory on Azure Virtual Machines, configuring a Domain Controller, and setting up remote desktop access for domain users.</p>
 
+<h2>Video Demonstration</h2>
+<p>- <a href="https://www.youtube.com">YouTube: How to Deploy on-premises Active Directory within Azure Compute</a></p>
 
 <h2>Environments and Technologies Used</h2>
 <ul>
@@ -22,8 +24,8 @@
 
 <h2>High-Level Deployment and Configuration Steps</h2>
 <ul>
-**Step 1:** Set up the Domain Controller in Azure</li>
-**Step 1:** Set up Client-1 in Azure</li>
+    <li>Set up the Domain Controller in Azure</li>
+    <li>Set up Client-1 in Azure</li>
     <li>Test Connectivity Between DC-1 and Client-1</li>
     <li>Install Active Directory Domain Services (AD DS)</li>
     <li>Configure Remote Desktop Access for Domain Users</li>
@@ -80,4 +82,39 @@
 <ul>
     <li>Open Active Directory Users and Computers (ADUC).</li>
     <li>Create Organizational Units (OUs): _EMPLOYEES and _ADMINS.</li>
-    <li>Create a new domain admin user: <b>Jane Doe</b> (username:
+    <li>Create a new domain admin user: <b>Jane Doe</b> (username: <code>jane_admin</code>).</li>
+    <li>Add <code>jane_admin</code> to the Domain Admins Security Group.</li>
+</ul>
+
+<h3>Join Client-1 to Your Domain</h3>
+<ul>
+    <li>Set Client-1's DNS settings to DC-1's private IP address.</li>
+    <li>Restart Client-1 and log in as local admin.</li>
+    <li>Join Client-1 to the domain <code>mydomain.com</code> and restart.</li>
+</ul>
+
+<h3>Set Up Remote Desktop for Non-Admin Users</h3>
+<ul>
+    <li>Log into Client-1 as <code>mydomain.com\jane_admin</code>.</li>
+    <li>Enable Remote Desktop access for domain users.</li>
+</ul>
+
+<h3>Create Additional Domain Users</h3>
+<ul>
+    <li>Log into DC-1 as <code>jane_admin</code>.</li>
+    <li>Use PowerShell to create additional users under the _EMPLOYEES OU.</li>
+    <li>Verify that users appear in ADUC.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>
+    ✅ Installed and configured Active Directory on DC-1.<br/>
+    ✅ Created domain users and OUs.<br/>
+    ✅ Joined Client-1 to the domain.<br/>
+    ✅ Set up Remote Desktop for domain users.<br/>
+</p>
+
+<p align="center">
+    <img src="https://img.shields.io/badge/Azure-Cloud-blue"/>
+</p>
+
