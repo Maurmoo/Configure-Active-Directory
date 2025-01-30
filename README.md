@@ -27,6 +27,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 ## Detailed Deployment and Configuration Steps
 
 ### Step 1: Set Up the Domain Controller (DC-1) in Azure
+![image](https://github.com/user-attachments/assets/aca6615e-2455-4882-a680-53ba63e80d45)
 
 1. **Create the DC-1 VM**:
    - Launch a new Virtual Machine (VM) with **Windows Server 2022**.
