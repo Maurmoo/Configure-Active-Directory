@@ -2,39 +2,6 @@
     <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
 </p>
 
-<h1>On-premises Active Directory Deployed in the Cloud (Azure)</h1>
-<p>This tutorial walks you through deploying on-premises Active Directory on Azure Virtual Machines, configuring a Domain Controller, and setting up remote desktop access for domain users.</p>
-
-
-<h2>Environments and Technologies Used</h2>
-<ul>
-    <li>Microsoft Azure (Virtual Machines/Compute)</li>
-    <li>Remote Desktop</li>
-    <li>Active Directory Domain Services (AD DS)</li>
-    <li>PowerShell</li>
-</ul>
-
-<h2>Operating Systems Used</h2>
-<ul>
-    <li>Windows Server 2022</li>
-    <li>Windows 10 (21H2)</li>
-</ul>
-
-<h2>High-Level Deployment and Configuration Steps</h2>
-<ul>
-    <li>Set up the Domain Controller in Azure</li>
-    <li>Set up Client-1 in Azure</li>
-    <li>Test Connectivity Between DC-1 and Client-1</li>
-    <li>Install Active Directory Domain Services (AD DS)</li>
-    <li>Configure Remote Desktop Access for Domain Users</li>
-</ul>
-
-<h2>Deployment and Configuration Steps</h2>
-
-<p align="center">
-    <img src="https://i.imgur.com/pU5A58S.png" alt="Microsoft Active Directory Logo"/>
-</p>
-
 # On-premises Active Directory Deployed in the Cloud (Azure)
 
 This tutorial guides you through deploying an on-premises Active Directory on Azure Virtual Machines, configuring a Domain Controller (DC), and setting up remote desktop access for domain users.
