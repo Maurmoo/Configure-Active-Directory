@@ -49,6 +49,14 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
        - Change the Assignment from Dynamic to Static.
        - Click Save to apply the changes.
    - **Firewall**: Temporarily disable for testing connectivity (you can enable it later).
+    ![image](https://github.com/user-attachments/assets/57097a53-c68a-4102-b7dc-517109a80e11)
+   - Log into DC-1 (Remote Desktop or Azure VM Console).
+   - Open PowerShell as Administrator.
+   - Run the following command to disable the firewall for all network profiles
+       - `Set-NetFirewallProfile -Profile Domain,Public,Private -Enabled False`
+   - To verify that the firewall is disabled, run
+       - `Get-NetFirewallProfile`
+   - The Enabled status should now be False.
 
 2. **Network Configuration**:
    - Ensure the DC-1 is within the same **Region** and **Virtual Network** as Client-1 for seamless communication.
