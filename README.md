@@ -72,6 +72,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - **Network Configuration**: Ensure Client-1 is in the same **Region** and **Virtual Network** as DC-1.
 
 2. **DNS Configuration**:
+   
  ![image](https://github.com/user-attachments/assets/20a46be7-c5b9-4b29-980d-fdec8eb9f6a2)
 
    - After the VM is created, go to the **Networking** section for Client-1.
