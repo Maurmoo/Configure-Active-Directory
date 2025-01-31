@@ -103,7 +103,8 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - After logging into **Client-1**, open **Command Prompt** or **PowerShell** and run:
    -  ping <DC-1 Private IP>
    - Ensure the ping is successful, confirming connectivity.
-
+     
+![image](https://github.com/user-attachments/assets/da70956d-7de2-4760-bcf0-bcc0938bd029)
 2. **Check DNS Settings**:
    - On **Client-1**, open **PowerShell** and run:
    - ipconfig /all
