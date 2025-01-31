@@ -78,7 +78,8 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 
 2. **DNS Configuration**:
    
- ![image](https://github.com/user-attachments/assets/20a46be7-c5b9-4b29-980d-fdec8eb9f6a2)
+![image](https://github.com/user-attachments/assets/1fc0d551-c85f-466e-ad40-35e543831f84)
+
 
    - After the VM is created, go to the **Networking** section for Client-1.
    - Set the **DNS Servers** to DC-1's **Private IP address**.
