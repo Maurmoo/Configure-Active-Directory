@@ -97,15 +97,18 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 
 
 ## Step 3: Test Connectivity Between DC-1 and Client-1
-![image](https://github.com/user-attachments/assets/bc169284-9419-49d7-bb56-4399b8e63d4a)
 
 1. **Ping Test**:
+   
+   ![image](https://github.com/user-attachments/assets/bc169284-9419-49d7-bb56-4399b8e63d4a)
    - After logging into **Client-1**, open **Command Prompt** or **PowerShell** and run:
    -  ping <DC-1 Private IP>
    - Ensure the ping is successful, confirming connectivity.
      
-![image](https://github.com/user-attachments/assets/da70956d-7de2-4760-bcf0-bcc0938bd029)
-2. **Check DNS Settings**:
+3. **Check DNS Settings**:
+   
+   ![image](https://github.com/user-attachments/assets/a6e38ec9-81a4-46c0-b0da-a484c19c531b)
+
    - On **Client-1**, open **PowerShell** and run:
    - ipconfig /all
    - Verify that the DNS server points to **DC-1’s private IP address**.
