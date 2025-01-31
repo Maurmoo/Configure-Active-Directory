@@ -117,8 +117,16 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 ## Step 4: Install Active Directory Domain Services (AD DS) on DC-1
 
 1. **Install AD DS**:
-   - On **DC-1**, open **Server Manager** → **Add Roles and Features**.
-   - Select **Active Directory Domain Services** (AD DS) and complete the installation.
+   - On **DC-1**, open **Server Manager** / **Add Roles and Features**.
+   - Click Next on the **Before You Begin**
+   - Select **Role-based or feature-based installation** and click Next.
+   - Select **DC-1 (local server) as the destination server**, then click Next.
+   - Server Roles list, scroll down and check **Active Directory Domain Services** (AD DS).
+   - A new window will pop up click **Add Features**, then click Next.
+   - Keep the default selections and click Next.
+   - AD DS Overview page, click Next.
+   - Install
+   
 
 2. **Promote DC-1 to Domain Controller**:
    - After AD DS installation, click the notification to promote DC-1 as a Domain Controller.
