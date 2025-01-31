@@ -73,7 +73,17 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 2. **DNS Configuration**:
    - After the VM is created, go to the **Networking** section for Client-1.
    - Set the **DNS Servers** to DC-1's **Private IP address**.
-
+       - Go to the Azure Portal: https://portal.azure.com.
+       - In the left sidebar, click Virtual Machines.
+       - Select Client-1 from the list of VMs.
+       - In the Settings section, click Networking.
+       - Click the Network Interface name (e.g., client-1-nic).
+       - Under Settings, select DNS Servers.
+       - Choose Custom.
+       - Enter DC-1’s Private IP Address (e.g., 10.0.0.4).
+       - Click Save.
+       - Restart Client-1 from the Azure portal to apply th
+         
 3. **Restart Client-1**:
    - Restart Client-1 from the Azure Portal to apply the DNS settings.
 
