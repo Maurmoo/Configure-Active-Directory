@@ -27,10 +27,10 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 ## Detailed Deployment and Configuration Steps
 
 ## Step 1: Set Up the Domain Controller (DC-1) in Azure
-![image](https://github.com/user-attachments/assets/808dc7e2-b446-49b7-8d05-d4379947b0f3)
 
-
-1. **Create the DC-1 VM**:
+## Create the DC-1 VM:
+   
+   ![image](https://github.com/user-attachments/assets/808dc7e2-b446-49b7-8d05-d4379947b0f3)
    - Launch a new Virtual Machine (VM) with **Windows Server 2022**.
    - **VM Name**: `DC-1`
    - **Username**: `labuser`
@@ -65,18 +65,18 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 
 
 ## Step 2: Set Up Client-1 in Azure
-![image](https://github.com/user-attachments/assets/a6cd88e8-3400-4268-8c37-d01c3daf31bc)
 
+## Create the Client-1 VM:
 
-
-1. **Create the Client-1 VM**:
+  ![image](https://github.com/user-attachments/assets/a6cd88e8-3400-4268-8c37-d01c3daf31bc)
+  
    - Launch a new VM with **Windows 10 (21H2)**.
    - **VM Name**: `Client-1`
    - **Username**: `labuser`
    - **Password**: `Cyberlab123!`
    - **Network Configuration**: Ensure Client-1 is in the same **Region** and **Virtual Network** as DC-1.
 
-2. **DNS Configuration**:
+## DNS Configuration:
    
 ![image](https://github.com/user-attachments/assets/1fc0d551-c85f-466e-ad40-35e543831f84)
 
@@ -98,16 +98,17 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 
 ## Step 3: Test Connectivity Between DC-1 and Client-1
 
-1. **Ping Test**:
+## Ping Test:
    
    ![image](https://github.com/user-attachments/assets/bc169284-9419-49d7-bb56-4399b8e63d4a)
    - After logging into **Client-1**, open **Command Prompt** or **PowerShell** and run:
    -  ping <DC-1 Private IP>
    - Ensure the ping is successful, confirming connectivity.
      
-3. **Check DNS Settings**:
+## Check DNS Settings:
    
-   ![image](https://github.com/user-attachments/assets/a6e38ec9-81a4-46c0-b0da-a484c19c531b)
+  ![image](https://github.com/user-attachments/assets/fcb7069b-45f9-4488-aaf6-3ed4aa812bb3)
+
 
    - On **Client-1**, open **PowerShell** and run:
    - ipconfig /all
