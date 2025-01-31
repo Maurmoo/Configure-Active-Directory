@@ -84,8 +84,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
        - Click Save.
        - Restart Client-1 from the Azure portal to apply th
          
-3. **Restart Client-1**:
-   - Restart Client-1 from the Azure Portal to apply the DNS settings.
+
 
 ## Step 3: Test Connectivity Between DC-1 and Client-1
 
