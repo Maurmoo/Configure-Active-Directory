@@ -86,7 +86,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
        - Choose Custom.
        - Enter DC-1’s Private IP Address (e.g., 10.0.0.4).
        - Click Save.
-       - Restart Client-1 from the Azure portal to apply th
+       - Restart Client-1 from the Azure portal 
          
 
 
