@@ -117,6 +117,8 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 ## Step 4: Install Active Directory Domain Services (AD DS) on DC-1
 
 1. **Install AD DS**:
+![image](https://github.com/user-attachments/assets/5eb2b38d-a9c2-4cdb-a0fb-d9190cd8a41a)
+
    - On **DC-1**, open **Server Manager** / **Add Roles and Features**.
    - Click Next on the **Before You Begin**
    - Select **Role-based or feature-based installation** and click Next.
@@ -128,7 +130,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Install
    
 
-2. **Promote DC-1 to Domain Controller**:
+3. **Promote DC-1 to Domain Controller**:
    - After AD DS installation, click the notification to promote DC-1 as a Domain Controller.
    - Create a new forest, for example: `mydomain.com`.
    - Set the **Domain Functional Level** to **Windows Server 2022**.
