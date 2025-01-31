@@ -65,7 +65,8 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 
 
 ## Step 2: Set Up Client-1 in Azure
-![image](https://github.com/user-attachments/assets/62b4167f-885f-47fa-a9a2-ef307f3ca46c)
+![image](https://github.com/user-attachments/assets/a6cd88e8-3400-4268-8c37-d01c3daf31bc)
+
 
 
 1. **Create the Client-1 VM**:
