@@ -131,7 +131,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Install
    
 
-3. **Promote DC-1 to Domain Controller**:
+## Promote DC-1 to Domain Controller
    - After AD DS installation, click the notification to promote DC-1 as a Domain Controller.
    - Create a new forest, for example: `mydomain.com`.
    - Set the **Domain Functional Level** to **Windows Server 2022**.
@@ -139,21 +139,21 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 
 ## Step 5: Configure Remote Desktop Access for Domain Users
 
-1. **Enable Remote Desktop on Client-1**:
+## Enable Remote Desktop on Client-1
    - Log into **Client-1** as **labuser**.
    - Open **System Properties** → **Remote Settings** → Select **Allow remote connections**.
 
-2. **Remote Desktop for Domain Users**:
+## Remote Desktop for Domain Users
    - Log into **Client-1** as **mydomain.com\jane_admin**.
    - Ensure that domain users have permission to connect via RDP by adding them to the **Remote Desktop Users** group.
 
 ## Step 6: Create and Manage Domain Users
 
-1. **Create Organizational Units (OUs)**:
+## Create Organizational Units (OUs)
    - On **DC-1**, open **Active Directory Users and Computers (ADUC)**.
    - Create two OUs: `_EMPLOYEES` and `_ADMINS`.
 
-2. **Create Domain Admin User**:
+## Create Domain Admin User
    - Inside **ADUC**, create
 
 
