@@ -139,6 +139,12 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Add a new forest, for example: `mydomain.com`.
    - Set the **Domain Functional Level** to **Windows Server 2016**.
    - **Set Directory Services Restore Mode (DSRM) password** (e.g., `Cyberlab123!`).
+   - Click Next through the DNS options and NetBIOS name settings.
+   - Review the Paths for AD DS Database, Log Files, and SYSVOL (default locations are fine).
+   - Click Next to review the settings.
+   - Click Install to begin the promotion process.
+
+
 
 ## Step 5: Configure Remote Desktop Access for Domain Users
 
