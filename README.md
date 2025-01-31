@@ -97,6 +97,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 
 
 ## Step 3: Test Connectivity Between DC-1 and Client-1
+![image](https://github.com/user-attachments/assets/bc169284-9419-49d7-bb56-4399b8e63d4a)
 
 1. **Ping Test**:
    - After logging into **Client-1**, open **Command Prompt** or **PowerShell** and run:
