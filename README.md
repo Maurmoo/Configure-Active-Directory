@@ -52,7 +52,8 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
        - Click Save to apply the changes.
    - **Firewall**: Temporarily disable for testing connectivity (you can enable it later).
    
-   ![image](https://github.com/user-attachments/assets/a3fa3a97-3378-418e-b330-710ee39d0c35)
+  ![image](https://github.com/user-attachments/assets/a5cec0af-9f3d-4f23-945a-bcee9faef380)
+
    - Log into DC-1 (Remote Desktop or Azure VM Console).
    - Open PowerShell as Administrator.
    - Run the following command to disable the firewall for all network profiles
