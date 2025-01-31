@@ -132,9 +132,12 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    
 
 ## Promote DC-1 to Domain Controller
+
+![image](https://github.com/user-attachments/assets/5b5d8c05-c139-4a7b-b4f9-1bf93f2066ce)
+
    - After AD DS installation, click the notification to promote DC-1 as a Domain Controller.
-   - Create a new forest, for example: `mydomain.com`.
-   - Set the **Domain Functional Level** to **Windows Server 2022**.
+   - Add a new forest, for example: `mydomain.com`.
+   - Set the **Domain Functional Level** to **Windows Server 2016**.
    - **Set Directory Services Restore Mode (DSRM) password** (e.g., `Cyberlab123!`).
 
 ## Step 5: Configure Remote Desktop Access for Domain Users
