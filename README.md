@@ -145,8 +145,25 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Click Install to begin the promotion process.
    - Log into DC-1 as mydomain.com\labuser.
 
+## Step 5: Create a Domain Admin User
+   - Open Active Directory Users and Computers (ADUC) (dsa.msc).
+   - Create Organizational Units (OUs):
+   - Right-click the domain (mydomain.com) > New > Organizational Unit.
+   - Name it _EMPLOYEES.
+   - Repeat the steps to create another OU called _ADMINS.
+   - Create a new user (Jane Doe):
+   - In _ADMINS, right-click > New > User.
+   - First Name: Jane, Last Name: Doe, Username: jane_admin.
+   - Set a password: Cyberlab123!.
+   - Check Password never expires.
+   - Add jane_admin to the Domain Admins Group:
+   - Open Jane Doe's properties > Member Of tab.
+   - Click Add > Type Domain Admins > Click OK.
+   - Log out of DC-1 and log back in as mydomain.com\jane_admin.
+   - Use jane_admin for all future administrative tasks.
 
-## Step 5: Configure Remote Desktop Access for Domain Users
+
+## Step 6: Configure Remote Desktop Access for Domain Users
 
 ## Enable Remote Desktop on Client-1
 
@@ -163,7 +180,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Log into **Client-1** as **mydomain.com\jane_admin**.
    - Ensure that domain users have permission to connect via RDP by adding them to the **Remote Desktop Users** group.
 
-## Step 6: Create and Manage Domain Users
+## Step 7: Create and Manage Domain Users
 
 ## Create Organizational Units (OUs)
    - On **DC-1**, open **Active Directory Users and Computers (ADUC)**.
