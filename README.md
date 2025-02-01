@@ -149,8 +149,15 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 ## Step 5: Configure Remote Desktop Access for Domain Users
 
 ## Enable Remote Desktop on Client-1
+
+![image](https://github.com/user-attachments/assets/0ef1b803-408e-43d2-9a88-3022677f9a0a)
+
+
    - Log into **Client-1** as **labuser**.
-   - Open **System Properties** → **Remote Settings** → Select **Allow remote connections**.
+   - Right-click on Start Menu and select System.
+   - In the left pane, click Remote Desktop.
+   - Under Remote Desktop, toggle the switch to On.
+   - Click Confirm when prompted.
 
 ## Remote Desktop for Domain Users
    - Log into **Client-1** as **mydomain.com\jane_admin**.
