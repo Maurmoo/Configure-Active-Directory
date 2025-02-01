@@ -143,7 +143,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Review the Paths for AD DS Database, Log Files, and SYSVOL (default locations are fine).
    - Click Next to review the settings.
    - Click Install to begin the promotion process.
-
+   - Log into DC-1 as mydomain.com\labuser.
 
 
 ## Step 5: Configure Remote Desktop Access for Domain Users
