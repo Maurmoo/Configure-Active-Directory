@@ -143,24 +143,31 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Review the Paths for AD DS Database, Log Files, and SYSVOL (default locations are fine).
    - Click Next to review the settings.
    - Click Install to begin the promotion process.
-   - Log into DC-1 as mydomain.com\labuser.
+   - Log into DC-1 as `mydomain.com\labuser`.
 
 ## Step 5: Create a Domain Admin User
-   - Open Active Directory Users and Computers (ADUC) (dsa.msc).
-   - Create Organizational Units (OUs):
-   - Right-click the domain (mydomain.com) > New > Organizational Unit.
-   - Name it _EMPLOYEES.
-   - Repeat the steps to create another OU called _ADMINS.
-   - Create a new user (Jane Doe):
+
+![image](https://github.com/user-attachments/assets/85f5ddb2-2ad0-415a-8a59-7b9fe7db0329)
+
+   - Open Active Directory Users and Computers (ADUC)
+   - Press `Win + R`, type `dsa.msc`, and press Enter.
+     
+## Create Organizational Units (OUs):
+
+
+   - Right-click the domain (`mydomain.com`) > New > Organizational Unit.
+   - Name it `_EMPLOYEES.`
+   - Repeat the steps to create another OU called `_ADMINS`.
+## Create a new user (Jane Doe):
    - In _ADMINS, right-click > New > User.
-   - First Name: Jane, Last Name: Doe, Username: jane_admin.
-   - Set a password: Cyberlab123!.
+   - First Name: `Jane`, Last Name: `Doe`, Username: `jane_admin`.
+   - Set a password: `Cyberlab123!`.
    - Check Password never expires.
-   - Add jane_admin to the Domain Admins Group:
+## Add `jane_admin` to the Domain Admins Group:
    - Open Jane Doe's properties > Member Of tab.
-   - Click Add > Type Domain Admins > Click OK.
-   - Log out of DC-1 and log back in as mydomain.com\jane_admin.
-   - Use jane_admin for all future administrative tasks.
+   - Click Add > Type `Domain Admins` > Click OK.
+   - Log out of DC-1 and log back in as `mydomain.com\jane_admin`.
+   - Use `jane_admin` for all future administrative tasks.
 
 
 ## Step 6: Configure Remote Desktop Access for Domain Users
