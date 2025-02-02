@@ -231,18 +231,15 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 - Apply changes and restart Client-1.
 
 ## Step 8: Create Multiple Users with PowerShell
+## Load the Active Directory Module
 
+![image](https://github.com/user-attachments/assets/0e83d8dd-913c-4549-9e5d-2c09477d5dfc)
 
 
 - Open PowerShell ISE on DC-1
 - Log into DC-1 as mydomain.com\jane_admin.
 - Press Win + R, type PowerShell_ISE, and press Enter.
 - Right-click PowerShell ISE and select Run as Administrator.
-
-## Load the Active Directory Module
-
-
-
 - Run the following command in PowerShell: `Import-Module ActiveDirectory`
 
 ## Define the Users You Want to Create
