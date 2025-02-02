@@ -181,13 +181,46 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Log out of DC-1 and log back in as **mydomain.com\jane_admin**.
    - Use **jane_admin** for all future administrative tasks.
 
+## Step 6: Join Client-1 to the Domain
+## Open System Properties:
+
+![image](https://github.com/user-attachments/assets/c895e7dc-bc45-46ff-9d1d-7ca8fa49160e)
+
+
+- Log into Client-1 using the local admin account labuser.
+- Press Win + R, type sysdm.cpl, and press Enter.
+- Go to the Computer Name tab > Click Change.
+- Select Domain, enter mydomain.com, and click OK.
+
+## When prompted, enter domain credentials:
+
+![image](https://github.com/user-attachments/assets/71d19f97-4bb8-4b1f-9a3d-adea6bae36c7)
+
+
+- Username: `mydomain\jane_admin`
+- Password: `Cyberlab123!`
+- Restart Client-1.
+
+## Verify Client-1 in ADUC:
+
+![image](https://github.com/user-attachments/assets/7cee7b4c-b534-46a1-80dd-940948233b59)
+
+
+- Log into DC-1.
+- Open Active Directory Users and Computers (ADUC).
+- Client-1 should appear under Computers.
+
+## Move Client-1 to the _CLIENTS OU:
+
+![image](https://github.com/user-attachments/assets/e70de060-8069-4950-a2d6-5dc59ccec351)
+
+- Right click mydomain.com / new / Organizational unit / _Client
+- In ADUC, right-click Computers > Move > Select _CLIENTS.
 
 ## Step 6: Configure Remote Desktop Access for Domain Users
-
 ## Enable Remote Desktop on Client-1
 
 ![image](https://github.com/user-attachments/assets/0ef1b803-408e-43d2-9a88-3022677f9a0a)
-
 
    - Log into **Client-1** as **labuser**.
    - Right-click on Start Menu and select System.
