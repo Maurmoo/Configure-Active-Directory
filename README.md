@@ -167,8 +167,8 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 ## Add `jane_admin` to the Domain Admins Group:
    - Open Jane Doe's properties > Member Of tab.
    - Click Add > Type `Domain Admins` > Click OK.
-   - Log out of DC-1 and log back in as `mydomain.com\jane_admin`.
-   - Use `jane_admin` for all future administrative tasks.
+   - Log out of DC-1 and log back in as **mydomain.com\jane_admin**.
+   - Use **jane_admin** for all future administrative tasks.
 
 
 ## Step 6: Configure Remote Desktop Access for Domain Users
