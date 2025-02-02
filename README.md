@@ -146,10 +146,11 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Log into DC-1 as `mydomain.com\labuser`.
 
 ## Step 5: Create a Domain Admin User
+## Open Active Directory Users and Computers (ADUC)
 
 ![image](https://github.com/user-attachments/assets/85f5ddb2-2ad0-415a-8a59-7b9fe7db0329)
 
-   - Open Active Directory Users and Computers (ADUC)
+
    - Press `Win + R`, type `dsa.msc`, and press Enter.
      
 ## Create Organizational Units (OUs):
