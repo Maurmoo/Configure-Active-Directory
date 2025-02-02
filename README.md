@@ -155,16 +155,27 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
      
 ## Create Organizational Units (OUs):
 
+![image](https://github.com/user-attachments/assets/ff1b5472-9d1e-4a75-8269-30efc3b8c081)
+
 
    - Right-click the domain (`mydomain.com`) > New > Organizational Unit.
    - Name it `_EMPLOYEES.`
    - Repeat the steps to create another OU called `_ADMINS`.
+     
 ## Create a new user (Jane Doe):
+
+![image](https://github.com/user-attachments/assets/e6cba3c4-46ac-4c3d-8493-9d50e75c1955)
+
+
    - In _ADMINS, right-click > New > User.
    - First Name: `Jane`, Last Name: `Doe`, Username: `jane_admin`.
    - Set a password: `Cyberlab123!`.
    - Check Password never expires.
+     
 ## Add `jane_admin` to the Domain Admins Group:
+
+![image](https://github.com/user-attachments/assets/8566f0ea-8ac6-4a82-abeb-63e12d91b077)
+
    - Open Jane Doe's properties > Member Of tab.
    - Click Add > Type `Domain Admins` > Click OK.
    - Log out of DC-1 and log back in as **mydomain.com\jane_admin**.
@@ -185,6 +196,7 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
    - Click Confirm when prompted.
 
 ## Remote Desktop for Domain Users
+
    - Log into **Client-1** as **mydomain.com\jane_admin**.
    - Ensure that domain users have permission to connect via RDP by adding them to the **Remote Desktop Users** group.
 
