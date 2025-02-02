@@ -217,29 +217,68 @@ This tutorial guides you through deploying an on-premises Active Directory on Az
 - Right click mydomain.com / new / Organizational unit / _Client
 - In ADUC, right-click Computers > Move > Select _CLIENTS.
 
-## Step 6: Configure Remote Desktop Access for Domain Users
-## Enable Remote Desktop on Client-1
+## Step 7: Configure Remote Desktop Access for Domain Users
+## Open System Properties:
 
-![image](https://github.com/user-attachments/assets/0ef1b803-408e-43d2-9a88-3022677f9a0a)
-
-   - Log into **Client-1** as **labuser**.
-   - Right-click on Start Menu and select System.
-   - In the left pane, click Remote Desktop.
-   - Under Remote Desktop, toggle the switch to On.
-   - Click Confirm when prompted.
-
-## Remote Desktop for Domain Users
-
-   - Log into **Client-1** as **mydomain.com\jane_admin**.
-   - Ensure that domain users have permission to connect via RDP by adding them to the **Remote Desktop Users** group.
-
-## Step 7: Create and Manage Domain Users
-
-## Create Organizational Units (OUs)
-   - On **DC-1**, open **Active Directory Users and Computers (ADUC)**.
-   - Create two OUs: `_EMPLOYEES` and `_ADMINS`.
-
-## Create Domain Admin User
-   - Inside **ADUC**, create
+![image](https://github.com/user-attachments/assets/e7dc4bc4-254e-4893-87ae-0b497deada9e)
 
 
+- Log into Client-1 as mydomain.com\jane_admin.
+- Press Win + R, type sysdm.cpl, and press Enter.
+- Click the Remote tab.
+- Under Remote Desktop, enable Allow remote connections to this computer.
+- Click Select Users... > Add mydomain\domain users.
+- Apply changes and restart Client-1.
+
+## Step 8: Create Multiple Users with PowerShell
+
+
+
+- Open PowerShell ISE on DC-1
+- Log into DC-1 as mydomain.com\jane_admin.
+- Press Win + R, type PowerShell_ISE, and press Enter.
+- Right-click PowerShell ISE and select Run as Administrator.
+
+## Load the Active Directory Module
+
+
+
+- Run the following command in PowerShell: `Import-Module ActiveDirectory`
+
+## Define the Users You Want to Create
+
+
+
+- In PowerShell run:
+- `  $users = @(
+    @{FirstName="John"; LastName="Doe"; UserName="john.doe"},
+    @{FirstName="Alice"; LastName="Smith"; UserName="alice.smith"},
+    @{FirstName="Bob"; LastName="Jones"; UserName="bob.jones"}   `
+
+## Create Each User in Active Directory
+
+
+
+- In PowerShell run:
+`  Foreach ($user in $users) {
+    $Password = ConvertTo-SecureString "Password123!" -AsPlainText -Force
+    New-ADUser -GivenName $user.FirstName -Surname $user.LastName -Name "$($user.FirstName) $($user.LastName)" 
+    -SamAccountName $user.UserName -UserPrincipalName "$($user.UserName)@mydomain.com" -Path "OU=_EMPLOYEES,DC=mydomain,DC=com" 
+    -AccountPassword $Password -Enabled $true -ChangePasswordAtLogon $false   `
+
+## Verify the Users in ADUC
+
+
+
+- Press Win + R, type `dsa.msc`, and hit Enter.
+- Expand mydomain.com / Open the _EMPLOYEES OU.
+- Verify that John Doe, Alice Smith, and Bob Jones were created.
+
+## Test Logging in on Client-1
+
+
+
+- Go to Client-1 and log out.
+- Try logging in as:
+- Username: `mydomain.com\john.doe`
+- Password: `Password123!`
